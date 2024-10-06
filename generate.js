@@ -34,7 +34,7 @@ async function main() {
     const desiredPrefix = "0xb453d";
 
     const salts = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 2; i++) {
         const { salt, address } = findVanitySalt(factoryAddress, initCodeHash, i, desiredPrefix);
         salts.push({ tokenId: i, salt, address });
     }
