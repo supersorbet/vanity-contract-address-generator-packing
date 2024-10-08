@@ -7,14 +7,30 @@ node script for predictable prefixed addresses deployed from factory
    ```bash
    npm install ethers@5.7.2 merkletreejs keccak256
 
-2. factoryAddress: address of your factory
-3. initCode: bytecode of the contract to be deployed
-4. desiredPrefix: example `0xb00b5
+### 2. setup
 
-5. run ```bash node generate.js
+Edit the following in the script:
 
-6. check output
-script generates a file called brain_tokens_data.json, name this file whatever you want. it includes:
+- **factoryAddress**: deployed contract factory.
+- **initCode**: bytecode of contract to be deployed.
+- **amount**: in generate.js, edit to the amount you want generated. in this repo, it's set to 2: Go to line 37:" (let i = 0; i < 2; i++) { "
+- **desiredPrefix**: prefix you want for your vanity contract addresses, e.g., `0xb00b5`.
 
-vanity addresses that start with your desired prefix.
-salt and merkle tree proofs for verification
+### 3. run script
+
+run to generate the addresses:
+
+```bash
+node generate.js
+```
+### 4. check output
+
+generates a file named `brain_tokens_data.json` (rename this file). includes:
+
+- **vanity addresses**: CAs that start with your specified prefix.
+- **salts**: values used to generate the addresses.
+- **merkle proofs**: Proofs that verify the generated addresses.
+
+entries in the output file provides unique vanity addresses that match desired prefix, w/ data for verification.
+this is meant to be passed to the factory with your custom implementation to be deployed FROM the factory
+
