@@ -1,4 +1,4 @@
-# vanity contract address gen w/ CREATE3
+# vanity contract address gen w/ CREATE3/2
 
 node script for predictable prefixed addresses deployed from factory
 
